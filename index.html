@@ -17,15 +17,23 @@
             <span class="navbar-brand mb-0 h1">Weather Dashboard</span>
           </nav>
      
+        <div class="container">
             <h3>Search for a City:</h3>
            <!-- Search form -->
-           <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" name="Search">
-            <button class="btn btn-primary my-4 my-sm-4" type="submit"><i class="fa fa-search"></i></button>
+           <div class="input-group mb-2 col-4">
+            <input type="text" class="form-control" aria-label="Recipient's city" aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" id="searchBtn"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+           <!--<form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-md-2" type="text" name="Search">
+            <button class="btn btn-primary my-4 my-md-4" type="submit"><i class="fa fa-search"></i></button>
            </form>
-         
+        </div> -->
            <!--City weather-->
-           <div class="jumbotron container col-md-7">
+           <div class="jumbotron container col-md-8">
             <h1 class="display-4">Hello, world!</h1>
             <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
             <hr class="my-4">
@@ -33,7 +41,18 @@
             <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
           </div>
        
-          <!--cities-->
+          <!--cities form-->
+                
+            <div class="btn-group-vertical col-sm-4" id="cityBtns">
+                <button type="button" class="btn btn-outline-secondary">Austin</button>
+                <button type="button" class="btn btn-outline-secondary">New York</button>
+                <button type="button" class="btn btn-outline-secondary">Austin</button>
+                <button type="button" class="btn btn-outline-secondary">Austin</button>
+                <button type="button" class="btn btn-outline-secondary">Austin</button>
+                <button type="button" class="btn btn-outline-secondary">Austin</button>
+                <button type="button" class="btn btn-outline-secondary">Austin</button>
+                <button type="button" class="btn btn-outline-secondary">Austin</button>
+            </div>   
 
           <!--5 day forecast-->
         
