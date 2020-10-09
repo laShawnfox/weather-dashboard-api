@@ -1,0 +1,14 @@
+
+  
+ button {
+    float: left;
+    width: 5%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 50px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+  }
+  
