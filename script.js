@@ -1,35 +1,37 @@
 $(document).ready(function(){
     //console.log("hello world");
-    //dom VARAIABLES
-  
-    var searchBtn = document.getElementById("searchBtn");
-    var jumbotron = document.getElementsByClassName("jumbotron");
-    var cityBtns   = document.getElementById("cityBtns");
-    //JS VARIABLES
+    // variables
+   var jumbotron = document.getElementsByClassName("jumbotron");
+    
     var queryURL = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=570e7463f975999cf525695cc31f504d";
     
-
+    var searchBtn = $("#searchBtn");
+    var cityBtns = $("#cityBtns");
    
-
+    function getWeather(e) {
+      console.log(e);
+    //    $.ajax({
+    //         url: 
+    //         "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=570e7463f975999cf525695cc31f504d",
+            
+    //         method: "GET" ,
+    //     });
+    }
     //FUNCTIONS
     //WHEN I search for a city and click button
-    $("#searchBtn").on("click", function (){
 
-        $.ajax({
-            url: 
-            "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=570e7463f975999cf525695cc31f504d",
-            
-            method: "GET",
-        });
-    })
-       //buttons of cities when clicked should populate to the right of screen
+    //Event listeners 
+    $("#searchBtn").click(getWeather);
+
+
+    
        //THEN I am presented with the city name, the date,...in top right jumbotron
 
-       
-       // THEN I am presented with current and future conditions for that city and that city is added to the search history
-   
 
-       
+       // THEN I am presented with current and future conditions for that city and that city is added to the search history
+   // auto-populate a form field
+
+    
 
 
    

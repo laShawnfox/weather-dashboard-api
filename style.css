@@ -1,7 +1,15 @@
-
+.jumbotron {
+    float: right;
+}
   
+
+ .container1 {
+    position: fixed;
+    clear: both;
+   
+ }
+
  #searchBtn {
-    float: left;
     width: 5%;
     padding: 10px;
     background: #2196F3;
