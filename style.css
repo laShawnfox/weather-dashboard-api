@@ -1,11 +1,13 @@
+
+
 .jumbotron {
     float: right;
+    position: relative;
 }
   
 
  .container1 {
     position: fixed;
-    clear: both;
    
  }
 

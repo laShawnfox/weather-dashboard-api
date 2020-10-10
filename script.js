@@ -8,34 +8,38 @@ $(document).ready(function(){
     var searchBtn = $("#searchBtn");
     var cityBtns = $("#cityBtns");
    
-    function getWeather(e) {
-      console.log(e);
-    //    $.ajax({
-    //         url: 
-    //         "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=570e7463f975999cf525695cc31f504d",
-            
-    //         method: "GET" ,
-    //     });
+    //function getWeather(e) {
+    //   console.log(e)
+    // }
+     
+    //var queryURL = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=570e7463f975999cf525695cc31f504d";
+    var searchWeather = function (cityName) {
+    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=570e7463f975999cf525695cc31f504d";
+
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+     }).then(function(response){
+      console.log(response);
+     });
     }
+    //api call for city name api.openweathermap.org/data/2.5/forecast?q={city name}&appid=570e7463f975999cf525695cc31f504d
+
     //FUNCTIONS
     //WHEN I search for a city and click button
+    // The createRow function takes data returned 
+  
+      // Create a new table row element
+      
 
     //Event listeners 
-    $("#searchBtn").click(getWeather);
-
-
-    
-       //THEN I am presented with the city name, the date,...in top right jumbotron
-
-
-       // THEN I am presented with current and future conditions for that city and that city is added to the search history
-   // auto-populate a form field
-
-    
-
+    //$("#searchBtn").click(getWeather);
 
    
 
+       //THEN I am presented with the city name, the date,...in top right jumbotron
+       // THEN I am presented with current and future conditions for that city and that city is added to the search history
+   // auto-populate a form field
 
 })
 
