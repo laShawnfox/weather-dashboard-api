@@ -1,18 +1,25 @@
 $(document).ready(function(){
 //console.log("hello world");
-function getWeather(event){
+function getWeather(searchCity) {
+    var apiKey = "570e7463f975999cf525695cc31f504d";
 $.ajax({
-    url: "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=570e7463f975999cf525695cc31f504d",
+    url: "http://api.openweathermap.org/data/2.5/forecast?id=" + searchCity + "&appid=" + apiKey,
+    
     method: "GET",
 }).then(function(response){
-    console.log(response.city);
+    console.log(response.list);
 });
 }
 
-$("#search-form").on("submit", function(){
+ $("#searchBtn").on("click", function(event){
     event.preventDefault();
-    getWeather();
-})
+    var searchCity = $("#user-input").val();
+    console.log(searchCity);
+     getWeather(searchCity);
+ })
 
 });
-//api.openweathermap.org/data/2.5/forecast?q={city name}
+//api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+//need city to be stored in local storage and name of city populates
+// current weather of that city populates
+//5 day forecast  

@@ -19,33 +19,40 @@
      
         <div class="container1" id="search">
           <div class="row">
-            <div class="col-md-12">
-            <h4>Search for a City:</h4>
+            <div class="col-sm-12"></div> 
            <!-- Search form -->
+           <div class="col-sm-12">
            <form id="search-form"> 
-           <div class="input-group mb-2 col-md-12">
-            <input type="text" class="form-control" aria-label="Recipient's city" aria-describedby="button-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button" id="searchBtn"><i class="fa fa-search"></i></button>
+            <div class="form-group">
+              <label for="user-input"><h4>Search for a City:</h4></label>
+              <input type="text" class="form-control" id="user-input"/>
             </div>
+          
+           <!--<div class="input-group mb-2 col-md-12">
+            <input type="text" class="form-control" aria-label="Recipient's city" aria-describedby="button-addon2">  
+            <div class="input-group-append"> -->
+              <button class="btn btn-primary" type="button" id="searchBtn"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
           </div>
-        </form>
+<!--Search History cities form-->
+                <!--make list-->
+          <div id="cityBtns">
+            <ul>
+                <li> <a>Austin</a></li>    
+            </ul>
+          
           </div>
         </div>
-         <!--Search History cities form-->
-                <!--make list-->
-            
-        <div id="cityBtns">
-          <ul>
-              <li> <a>Austin</a></li>    
-          </ul>
-    </div> 
+         
+
         </div>  
              
             
        
            <!--City weather-->
         <div class="container2" id="right">
+          <div class="row">
         <div class="col-md-12">
            <div class="jumbotron">
             <div class="container">
@@ -56,8 +63,9 @@
         </div>
         <div class="row">
         <div class="col-md-6">
+          <!--5 day forecast-->
              <p>
-               <h4>5-Day Forecast:</h4>
+               5-Day Forecast:
               </p>
               <div class="card" style="width: 18rem;">
                 <div class="card-body">
@@ -69,9 +77,10 @@
               
             </div>
         </div>
+      </div>
         </div>   
       
-          <!--5 day forecast-->
+          
         
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>   
      <script type="text/javascript"></script>   
