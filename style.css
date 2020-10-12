@@ -1,18 +1,37 @@
+h2 {
+   text-align: center;
+}
 
+.topnav-centered a {
+   float: none;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
 
 .jumbotron {
-    float: right;
-    position: relative;
-}
+   width: 100%;
   
+}
 
- .container1 {
-    position: fixed;
+ #search {
+    position: fixed; 
+    background: rgb(248, 249, 250);
+    height: 500px;
+ }
+
+ #right {
+   position: relative;
+   float: right;
+   background: rgb(248, 249, 250);
+   width: 70%;
+   height: 500px;
    
  }
 
  #searchBtn {
-    width: 5%;
+    width: 4%;
     padding: 10px;
     background: #2196F3;
     color: white;
