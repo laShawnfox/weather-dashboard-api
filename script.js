@@ -3,8 +3,7 @@ $(document).ready(function(){
 function getWeather(searchCity) {
     var apiKey = "570e7463f975999cf525695cc31f504d";
 $.ajax({
-    url: "http://api.openweathermap.org/data/2.5/forecast?id=" + searchCity + "&appid=" + apiKey,
-    
+    url: "http://api.openweathermap.org/data/2.5/weather?q=" + searchCity + "&appid=" + apiKey,
     method: "GET",
 }).then(function(response){
     console.log(response.list);
