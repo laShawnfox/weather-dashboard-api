@@ -28,7 +28,7 @@
             </div>
           
            <div class="input-group mb-2 col-md-12">
-            <input type="text" id="input-city" class="form-control" aria-label="Recipient's city" aria-describedby="button-addon2"> 
+            <input type="text" id="input-city" class="form-control" aria-label="City Name" aria-describedby="button-addon2"> 
             <div class="input-group-append"> 
               <button class="btn btn-primary" type="button" id="searchBtn" aria-describedby="button-addon2"><i class="fa fa-search"></i></button>
             </div>
@@ -38,7 +38,7 @@
           </div>
 <!--Search History cities form-->
                 <!--make list-->
-          <div id="cityBtns">
+          <div id="search-history">
             <ul>
                 <li> <a>Austin</a></li>    
             </ul>
@@ -57,14 +57,15 @@
         <div class="col-md-12">
            <div class="jumbotron">
             <div class="container" id=currentWeather>
-              <h1 class="display-4">Atlanta</h1>
-              <p class="Temp">Temperature: 72 ° F</p>
+              <h1 class="city-display">Atlanta</h1>
+              <p id="Temp">Temperature: 72 ° F</p>
               <p id="humidity">Humidity: 41 %</p>
               <p id="wind-speed">Wind Speed: 4.7 MPH</p>
-              <p id="uv">UV Index:</p> 
+              <p id="uv">UV Index:
               <div class="uv-append">
-              <button type="button" class="btn btn-danger">Danger</button>
+              <button type="button" class="btn btn-danger"></button>
               </div>
+            </p> 
             </div>
           </div>
         </div>
@@ -77,27 +78,20 @@
               </p>
               <div id="fiveDay">
               <div class="card" style="width: 10rem;">
-                <div class="card-body bg-primary""></div>
+                <div class="card-body bg-primary"></div>
                 </div>
               </div>
                 <div class="card" style="width: 10rem;">
-                  <div class="card-body bg-primary"">
-                  </div>
-                  </div>
-                  <div class="card" style="width: 10rem;">
-                    <div class="card-body bg-primary"">
-                     
-                    </div>
+                  <div class="card-body bg-primary"></div>
                   </div>
                   <div class="card" style="width: 10rem;">
-                    <div class="card-body bg-primary"">
-                     
-                    </div>
+                    <div class="card-body bg-primary"></div>
                   </div>
                   <div class="card" style="width: 10rem;">
-                    <div class="card-body bg-primary">
-                     
-                    </div>
+                    <div class="card-body bg-primary"></div> 
+                  </div>
+                  <div class="card" style="width: 10rem;">
+                    <div class="card-body bg-primary"></div>
                   </div>
                       </div>
               </div>

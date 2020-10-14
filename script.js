@@ -6,16 +6,19 @@ var tempEL = $("#temp");
 var currentHumidity = $("#humidity");
 var currentWind = $("#wind-speed");
 var uv = $("#uv");
+var searchHistory = JSON.parse(localStorage.getItem("search-form"));
+var searchCity = $("#user-input");
+var cityName = $("#city-display");
+var UV = "http://api.openweathermap.org/data/2.5/uvi?lat={lat}&lon={lon}&appid=463f975999cf525570e7695cc31f504d";
 
-
-
-function getWeather(searchCity) {
-    console.log(searchCity)
-    var searchCity = $("#user-input");
-    var queryUrl = "http://api.openweathermap.org/data/2.5/forecast?q=" + searchCity + "&appid=570e7463f975999cf525695cc31f504d";
-    var apiKey = "570e7463f975999cf525695cc31f504d";
+function getWeather(cityName) {
+   // console.log(cityName);
+    var apiKey = "463f975999cf525570e7695cc31f504d";
+    var searchCity = $("#user-input").val();
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + apiKey;
+   
 $.ajax({
-    url: queryUrl, 
+    url: queryURL, 
     method: "GET",
 }).then(function(response){
     console.log(response);
@@ -24,7 +27,7 @@ $.ajax({
     for (var i = 0; i < response.length; i + 8){
     fiveDay.append("<div>");
         var weather = $("<h3>");
-        weather.text(response.main[0].temp);
+        weather.text(response.list.main[0].temp);
         $("#fiveDay").append(weather);   
     }
 
@@ -35,15 +38,14 @@ $.ajax({
  $("#searchBtn").on("click", function(event){
     event.preventDefault();
     searchCity = $("#user-input").val();
-    console.log(searchCity);
+    //console.log(searchCity);
      getWeather(searchCity);
-     //localStorage.setItem("search", JSON.stringify());
+     //localStorage.setItem("search", JSON.stringify("search-form"));
      //getCities();
-     //want 5 day forecast to populate 
+     
  })
 
 });
-//api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
-//need city to be stored in local storage and name of city populates
+//api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key
 // current weather of that city populates
 //5 day forecast  
