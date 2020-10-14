@@ -116,13 +116,15 @@ nav {
     float: right;
     width: 60%;
 }
-
-
-
-
         </style>
-         
-        
+         <script>
+            $(document).ready(function (){
+                $.ajax({
+         url: "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=570e7463f975999cf525695cc31f504d",
+        method: "GET",
+      }).then(function(response){
+       console.log(response.city);
+    </script>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>   
         <script type="text/javascript"></script>   
