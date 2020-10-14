@@ -1,11 +1,17 @@
 $(document).ready(function(){
 //console.log("hello world");
 var fiveDay = $("#fiveDay");
+var searchButton = $("#searchBtn");
+var tempEL = $("#temp");
+var currentHumidity = $("#humidity");
+var currentWind = $("#wind-speed");
+var uv = $("#uv");
+
 
 
 function getWeather(searchCity) {
     console.log(searchCity)
-    var searchCity = $("#user-input").val();
+    var searchCity = $("#user-input");
     var queryUrl = "http://api.openweathermap.org/data/2.5/forecast?q=" + searchCity + "&appid=570e7463f975999cf525695cc31f504d";
     var apiKey = "570e7463f975999cf525695cc31f504d";
 $.ajax({
@@ -15,12 +21,13 @@ $.ajax({
     console.log(response);
  fiveDay.html("");
 
-    for (var i = 0; i < response.list.length; i + 8){
+    for (var i = 0; i < response.length; i + 8){
     fiveDay.append("<div>");
         var weather = $("<h3>");
-        weather.text(response.list[i].main.temp);
+        weather.text(response.main[0].temp);
         $("#fiveDay").append(weather);   
     }
+
 });
 }
  
@@ -30,6 +37,7 @@ $.ajax({
     searchCity = $("#user-input").val();
     console.log(searchCity);
      getWeather(searchCity);
+     //localStorage.setItem("search", JSON.stringify());
      //getCities();
      //want 5 day forecast to populate 
  })
