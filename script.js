@@ -28,6 +28,7 @@ $.ajax({
 }).then(function(response){
     console.log(response);
    console.log(response.name);
+   console.log(response.list.main.temp);
    fiveDay.html("");
 
  //Five Day Forecast
@@ -42,7 +43,9 @@ $.ajax({
 }
  
 //Current weather
-function getCurrent(currentDay) {
+function getCurrent(cityDisplay) {
+var cityDisplay = $("#city-display");
+var city = $("#user-input").val();    
 var apiKey = "463f975999cf525570e7695cc31f504d";
 var queryURLcurrent = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey;
 
@@ -52,18 +55,30 @@ $.ajax({
 }).then(function(response){
     console.log(response);
 
-
-
 $("#display-name").text(response.name);
 $("#weather-icon").attr("src", "http://openweathermap.org/img/wn/" + response.list[0].weather[0].icon + "@2x.png");
 
-})
+});
 }
 
+var city = $("#user-input").val();    
+var apiKey = "463f975999cf525570e7695cc31f504d";
+var queryURLcurrent = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey;
+
+$.ajax({
+    url: queryURLcurrent, 
+    method: "GET",
+}).then(function(response){
+    //console.log(response);
+    $("#temp").text("Temperture" + response.list.main.temp);
+    $("#humidity").text("Humidity" + response.list.main.humidity);
+    $("#wind-speed").text("Wind Speed" + response.list.main.wind.speed);
+    
+
  $("#searchBtn").on("click", function(){
-   getWeather(city);
+   //getWeather(city);
     city = $("#user-input").val();
-    getCurrent(currentDay);
+   // getCurrent(cityDisplay);
     console.log(city);
     console.log(cityDisplay);
    // localStorage.getItem(city);
