@@ -37,11 +37,12 @@ $.ajax({
         weather.text(response.list.main[0].temp);
         $("#fiveDay").append(weather);   
      }
-
+    
 });
 }
  
 //Current weather
+function getCurrent(){
 var queryURLcurrent = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey;
 var apiKey = "463f975999cf525570e7695cc31f504d";
 
@@ -51,11 +52,9 @@ $.ajax({
 }).then(function(response){
     console.log(response);
 
-
-         
+}
 
 $("#display-name").text(response.name);
-var icon =response.weather[0].icon;
 $("#weather-icon").attr("src", "http://openweathermap.org/img/wn/" + response.list[0].weather[0].icon + "@2x.png");
 
  $("#searchBtn").on("click", function(){
@@ -74,6 +73,3 @@ $("#weather-icon").attr("src", "http://openweathermap.org/img/wn/" + response.li
 
 
 });
-//api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key
-// current weather of that city populates
-//5 day forecast  
