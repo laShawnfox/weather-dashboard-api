@@ -74,6 +74,7 @@ $.ajax({
     $("#humidity").text("Humidity" + response.list.main.humidity);
     $("#wind-speed").text("Wind Speed" + response.list.main.wind.speed);
     
+    
 
  $("#searchBtn").on("click", function(){
    //getWeather(city);
