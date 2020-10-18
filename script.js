@@ -42,9 +42,9 @@ $.ajax({
 }
  
 //Current weather
-function getCurrent(){
-var queryURLcurrent = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey;
+function getCurrent(currentDay) {
 var apiKey = "463f975999cf525570e7695cc31f504d";
+var queryURLcurrent = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey;
 
 $.ajax({
     url: queryURLcurrent, 
@@ -52,17 +52,21 @@ $.ajax({
 }).then(function(response){
     console.log(response);
 
-}
+
 
 $("#display-name").text(response.name);
 $("#weather-icon").attr("src", "http://openweathermap.org/img/wn/" + response.list[0].weather[0].icon + "@2x.png");
 
+})
+}
+
  $("#searchBtn").on("click", function(){
    getWeather(city);
     city = $("#user-input").val();
+    getCurrent(currentDay);
     console.log(city);
     console.log(cityDisplay);
-    localStorage.getItem(city);
+   // localStorage.getItem(city);
     //currentWeather(city);
    
      //localStorage.setItem("search", JSON.stringify("search-form"));
